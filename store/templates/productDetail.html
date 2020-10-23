@@ -23,7 +23,7 @@
                                 <div class="col-md-8">
                                     <div>
                                         <h1 class="font-weight-light">{{ product.name }}</h1>
-                                        <h4 class="font-weight-light">가격: <strong>{{ product.price|currency:"WON" }}</strong></h4>
+                                        <h4 class="font-weight-light">가격: <strong>{{ product.price }}원</strong></h4>
                                          <form action="/#{{ product.id }}" method="POST">
                                             {% csrf_token %}
                                             <input type="hidden" value="{{ product.id }}" name="product">

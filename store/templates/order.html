@@ -24,9 +24,9 @@
                     <td>{{ forloop.counter }}</td>
                     <td><img height="80px" width="100px" src="{{ order.product.image.url }}" alt=""></td>
                     <td>{{ order.product }}</td>
-                    <td>{{ order.price|currency }}</td>
+                    <td>{{ order.price|currency:"WON" }}</td>
                     <td>{{ order.quantity }}</td>
-                    <th>{{ order.quantity|multipy:order.price|currency }}</th>
+                    <th>{{ order.quantity|multipy:order.price }}원</th>
                     <th>{{ order.date }}</th>
                     {% if order.completed %}
                     <th><span class="badge badge-success">주문완료</span></th>
