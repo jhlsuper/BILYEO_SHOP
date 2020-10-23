@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-2 mb-3">
             <ul class="list-group">
-                <li class="list-group-item active bg-secondary border-0"><a style="text-decoration:none; color:white;" href="/">All Category</a></li>
+                <li class="list-group-item active bg-secondary border-0"><a style="text-decoration:none; color:white;" href="/">카테고리</a></li>
                 {% for category in categories %}
                 <li class="list-group-item ctg"><a style="text-decoration:none; color:black;" href="/?category_id={{ category.id }}">{{ category.name }}</a></li>
                 {% endfor %}
@@ -17,7 +17,7 @@
                 {% if products|length == 0 %}
                 <div class="alert alert-warning col-12">
                     <strong>
-                        <h3>No Product Found!</h3>
+                        <h3>상품 준비중...</h3>
                     </strong>
                 </div>
                 {% elif products|length > 0 %}
@@ -32,11 +32,11 @@
                                     {% csrf_token %}
                                     <input type="hidden" value="{{ product.id }}" name="product">
                                     {% if product|is_in_cart:request.session.cart %}
-                                    <a class="btn btn-warning" href="/cart">Go to cart </a>
+                                    <a class="btn btn-warning" href="/cart">장바구니 </a>
                                     {% else %}
                                     <input class="btn btn-primary" type="submit" value="Add to cart">
                                     {% endif %}
-                                    <a class="btn btn-success" href="/?id={{ product.id }}">View</a>
+                                    <a class="btn btn-success" href="/?id={{ product.id }}">상세보기</a>
                                 </form>
                             </div>
                         </div>

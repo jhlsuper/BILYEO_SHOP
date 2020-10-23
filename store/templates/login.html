@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <h1 class="font-weight-light">Login | Eshop </h1>
+            <h1 class="font-weight-light">로그인 | 빌려~ </h1>
             <hr>
             <form action="{% url 'login' %}" method="POST">
                 {% csrf_token %}
@@ -12,14 +12,14 @@
                     <small style="color:red"> {{ error }} </small>
                 {% endif %}
                 <div class="form-group">
-                    <label for="email">Email address</label>
+                    <label for="email">이메일 주소</label>
                     <input value="{{ userData.email }}" name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
+                    <label for="password">비밀번호</label>
                     <input name="password" type="password" class="form-control" id="password" placeholder="Enter Password">
                 </div>
-                <button type="submit" class="btn btn-primary">LOGIN</button>
+                <button type="submit" class="btn btn-primary">로그인</button>
             </form>
         </div>
     </div>

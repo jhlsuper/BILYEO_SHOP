@@ -1,10 +1,13 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 {% extends 'base.html' %}
 {% block title %}Eshop | Signup {% endblock%}
 {% block content %}
 <div class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <h1 class="font-weight-light">Signup | Eshop </h1>
+            <h1 class="font-weight-light">회원가입 | 빌려~ </h1>
             <hr>
             <form action="/signup" method="POST">
                 {% if error %}
@@ -13,43 +16,43 @@
                 {% endif %}
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input value="{{ userData.name }}" name="name" type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name">
+                    <label for="name">이름</label>
+                    <input value="{{ userData.name }}" name="name" type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="홍길동">
                     {% if error %}
                     <small style="color:red"> {{ error.name_error }} </small>
                     {% endif %}
                 </div>
                 <div class="form-group">
-                    <label for="email">Email address</label>
-                    <input value="{{ userData.email }}" name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                    <label for="email">이메일 주소</label>
+                    <input value="{{ userData.email }}" name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="bilyeo@likelion.org">
                     {% if error %}
                     <small style="color:red"> {{ error.emailExits_error }} </small>
                     {% endif %}
                 </div>
                 <div class="form-group">
-                    <label for="phone">Phone number</label>
-                    <input value="{{ userData.phone }}" name="phone" type="number" class="form-control" id="phone" placeholder="Enter Phone Number">
+                    <label for="phone">전화 번호</label>
+                    <input value="{{ userData.phone }}" name="phone" type="number" class="form-control" id="phone" placeholder="010-1004-1004">
                     {% if error %}
                     <small style="color:red"> {{ error.phoneNumber_error }} </small>
                     {% endif %}
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input name="password" type="password" class="form-control" id="password" placeholder="Enter Password">
+                    <label for="password">비밀번호</label>
+                    <input name="password" type="password" class="form-control" id="password" placeholder="비밀번호">
                     {% if error %}
                     <small style="color:red">{{ error.notMatch_error }}
                         {{ error.minPass_error }} </small>
                     {% endif %}
                 </div>
                 <div class="form-group">
-                    <label for="confirm_password">Confirm Password</label>
-                    <input name="confirm_password" type="password" class="form-control" id="confirm_password" placeholder="Enter Password">
+                    <label for="confirm_password">비밀번호 확인</label>
+                    <input name="confirm_password" type="password" class="form-control" id="confirm_password" placeholder="비밀번호 확인">
                     {% if error %}
                     <small style="color:red"> {{ error.notMatch_error }}
                         {{ error.minPass_error }} </small>
                     {% endif %}
                 </div>
-                <button type="submit" class="btn btn-primary">SIGNUP</button>
+                <button type="submit" class="btn btn-primary">회원가입</button>
             </form>
         </div>
     </div>
